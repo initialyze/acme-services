@@ -1,9 +1,5 @@
 /* eslint-disable import/no-cycle */
-
-const { searchParams, origin } = new URL(window.location.href);
-const branch = searchParams.get('nx') || 'main';
-
-const NX_ORIGIN = branch === 'local' || origin.includes('localhost') ? 'http://localhost:6456/nx' : 'https://da.live/nx';
+import { NX_ORIGIN } from './scripts.js';
 
 let expMod;
 const DA_EXP = '/public/plugins/exp/exp.js';

@@ -20,7 +20,7 @@ import {
 const { searchParams, origin } = new URL(window.location.href);
 const branch = searchParams.get('nx') || 'main';
 
-const NX_ORIGIN = branch === 'local' || origin.includes('localhost') ? 'http://localhost:6456/nx' : 'https://da.live/nx';
+export const NX_ORIGIN = branch === 'local' || origin.includes('localhost') ? 'http://localhost:6456/nx' : 'https://da.live/nx';
 
 /**
  * Builds hero block and prepends to main in a new section.
