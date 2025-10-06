@@ -1,5 +1,0 @@
-mountpoints:
-  /blogs:
-    url: "https://author-p30618-e1050810.adobeaemcloud.com/bin/franklin.delivery/initialyze/acme-services/develop"
-    type: "markup"
-    suffix: ".html"
