@@ -1,9 +1,16 @@
-# Your Project's Title...
-Your project's description...
+# The Repoless EDS
+This git repo is enabled for repoless feature. The same code is getting used for different content source.
+
+Currently this repo is pointing to DA and google drive as content source based on the config service api
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.aem.page/
-- Live: https://main--{repo}--{owner}.aem.live/
+DA
+- Preview: https://main--acme-services--initialyze.aem.page/
+- Live: https://main--acme-services--initialyze.aem.live/
+
+Google Drive
+- Preview: https://main--acme-services-gdrive--initialyze.aem.page/
+- Live: https://main--acme-services-gdrive--initialyze.aem.live/
 
 ## Documentation
 
