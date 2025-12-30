@@ -6,6 +6,10 @@ header .nav-wrapper {
   position: fixed;
 }
 
+header nav p {
+  margin: 0;
+}
+
 header .nav-offer {
   text-align: center;
   font-size: var(--body-font-size-s);
@@ -32,7 +36,6 @@ header nav {
   margin: auto;
   max-width: 1248px;
   height: var(--nav-height);
-
   font-family: var(--body-font-family);
 }
 
@@ -57,12 +60,6 @@ header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
   }
-}
-
-header nav p {
-  margin: 0;
-
-  /* line-height: 1; BOILERPLATE DOESN'T HAVE a P tag in header, */
 }
 
 header nav a:any-link {
@@ -190,9 +187,29 @@ header nav .nav-sections ul>li {
   font-weight: 500;
 }
 
+/* Menu Links */
+header nav .menu-item ul li {
+  margin-bottom: 0;
+}
+
+header nav .nav-sections ul>li>ul>li {
+  font-weight: 400;
+}
+
 header nav .nav-sections ul>li:hover {
   cursor: pointer;
   border-bottom: 2px solid var(--light-blue-color, #6366f1);
+}
+
+header nav .menu-item ul li a {
+  display: inline-block;
+  padding: 5px 0;
+  color: #4a4a68;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 header nav .nav-sections ul>li a:hover,
@@ -204,12 +221,21 @@ header nav .nav-sections ul>li:has(a.nav-link-active) {
   border-bottom: 2px solid var(--light-blue-color, #6366f1);
 }
 
-header nav .nav-sections ul>li>ul {
-  margin-top: 0;
+/* Category Columns */
+header nav .menu-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 24px;
 }
 
-header nav .nav-sections ul>li>ul>li {
-  font-weight: 400;
+header nav .menu-item>div>ul {
+  position: relative;
+  padding-right: 32px;
+}
+
+header nav .nav-sections ul>li>ul {
+  margin-top: 0;
 }
 
 @media (width >=900px) {
@@ -354,27 +380,25 @@ header .breadcrumbs ol li[aria-current] {
 }
 
 /* menu-items styles - Modern Mega Nav */
-
 header nav .menu-item {
   display: none;
-  /* Hidden by default, shown via JS on hover */
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
   padding: 0;
   max-height: 80dvh;
   overflow-y: auto;
   box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.08),
-    0 8px 16px rgba(0, 0, 0, 0.04),
-    0 0 0 1px rgba(0, 0, 0, 0.02);
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-  animation: menuSlideIn 0.25s ease-out;
+    0 20px 40px rgb(0 0 0 / 8%),
+    0 8px 16px rgb(0 0 0 / 4%),
+    0 0 0 1px rgb(0 0 0 / 2%);
+  border-top: 1px solid rgb(0 0 0 / 5%);
+  animation: menu-slide-in 0.25s ease-out;
 }
 
-@keyframes menuSlideIn {
+@keyframes menu-slide-in {
   from {
     opacity: 0;
     transform: translateY(-8px);
@@ -395,19 +419,6 @@ header nav .menu-item>div {
   gap: 48px;
 }
 
-/* Category Columns */
-header nav .menu-item ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 24px;
-}
-
-header nav .menu-item>div>ul {
-  position: relative;
-  padding-right: 32px;
-}
-
 /* Category Titles */
 header nav .menu-item strong {
   font-size: 13px;
@@ -419,22 +430,6 @@ header nav .menu-item strong {
   padding-bottom: 12px;
   border-bottom: 2px solid var(--light-blue-color, #6366f1);
   display: inline-block;
-}
-
-/* Menu Links */
-header nav .menu-item ul li {
-  margin-bottom: 0;
-}
-
-header nav .menu-item ul li a {
-  display: inline-block;
-  padding: 5px 0;
-  color: #4a4a68;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  position: relative;
 }
 
 header nav .menu-item ul li a::before {
@@ -469,7 +464,6 @@ header nav .menu-item picture img {
   position: relative;
   border-radius: 16px;
   overflow: hidden;
-  height: 100%;
   min-height: 320px;
   transition: all 0.3s ease;
   margin-bottom: 14px;
