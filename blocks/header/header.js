@@ -183,6 +183,8 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
+  const navOffer = nav.querySelector('.nav-offer').cloneNode(true);
+  nav.querySelector('.nav-offer').remove();
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -211,6 +213,83 @@ export default async function decorate(block) {
     });
   }
 
+  // Mega menu hover functionality
+  let menuHideTimeout = null;
+
+  function hideAllMenuItems() {
+    nav.querySelectorAll('.menu-item').forEach((menuItem) => {
+      menuItem.style.display = 'none';
+    });
+    // Remove active state from nav links
+    navSections.querySelectorAll('.nav-link-active').forEach((link) => {
+      link.classList.remove('nav-link-active');
+    });
+  }
+
+  function showMenuItem(className, triggerLink) {
+    // Clear any pending hide timeout
+    if (menuHideTimeout) {
+      clearTimeout(menuHideTimeout);
+      menuHideTimeout = null;
+    }
+
+    // Hide all menu items first
+    hideAllMenuItems();
+
+    // Show the matching menu item
+    const menuItem = nav.querySelector(`.menu-item.${className}`);
+    if (menuItem) {
+      menuItem.style.display = 'block';
+      if (triggerLink) {
+        triggerLink.classList.add('nav-link-active');
+      }
+    }
+  }
+
+  function scheduleHideMenuItems() {
+    // Add a small delay before hiding to allow mouse to move to menu
+    menuHideTimeout = setTimeout(() => {
+      hideAllMenuItems();
+    }, 150);
+  }
+
+  // Add hover listeners to nav links with href starting with #
+  if (navSections && isDesktop.matches) {
+    navSections.querySelectorAll('a[href^="#"]').forEach((link) => {
+      const href = link.getAttribute('href');
+      const className = href.substring(1); // Remove the # from href
+
+      link.addEventListener('mouseenter', () => {
+        if (isDesktop.matches) {
+          showMenuItem(className, link);
+        }
+      });
+
+      link.addEventListener('mouseleave', () => {
+        if (isDesktop.matches) {
+          scheduleHideMenuItems();
+        }
+      });
+    });
+
+    // Keep menu open when hovering over menu-item
+    nav.querySelectorAll('.menu-item').forEach((menuItem) => {
+      menuItem.addEventListener('mouseenter', () => {
+        if (menuHideTimeout) {
+          clearTimeout(menuHideTimeout);
+          menuHideTimeout = null;
+        }
+      });
+
+      menuItem.addEventListener('mouseleave', () => {
+        scheduleHideMenuItems();
+      });
+    });
+
+    // Initially hide all menu items
+    hideAllMenuItems();
+  }
+
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const search = navTools.querySelector('a[href*="search"]');
@@ -235,6 +314,7 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
+  navWrapper.prepend(navOffer);
   block.append(navWrapper);
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
