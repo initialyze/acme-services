@@ -334,6 +334,25 @@ header nav .nav-tools .button {
   line-height: 0;
 }
 
+header nav .nav-tools .default-content-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+header nav .nav-tools p:hover {
+  cursor: pointer;
+  color: var(--link-hover-color);
+}
+
+header nav .nav-tools p .icon-user {
+  margin-right: 5px;
+}
+
+header nav .nav-tools p:hover .icon-user {
+  background-color: var(--light-blue-color);
+  border-radius: 50%;
+}
+
 /* breadcrumbs */
 header .breadcrumbs {
   display: none;
