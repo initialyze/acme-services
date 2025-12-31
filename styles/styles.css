@@ -273,3 +273,32 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+
+/* login */
+.login {
+  cursor: pointer;
+}
+
+.nav-tools .default-content-wrapper {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-tools p:hover {
+  cursor: pointer;
+  color: var(--link-hover-color);
+}
+
+.nav-tools p:hover .icon-user {
+  background-color: #6481f6;
+  border-radius: 50%;
+}
+
+.nav-tools p .icon-user {
+  margin-right: 5px;
+}
+
+.icon {
+  vertical-align: sub;
+}
