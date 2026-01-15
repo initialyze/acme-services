@@ -196,7 +196,7 @@ header nav .nav-sections ul>li>ul>li {
   font-weight: 400;
 }
 
-header nav .nav-sections ul>li:hover {
+header nav .nav-sections .default-content-wrapper>ul>li:hover {
   cursor: pointer;
   border-bottom: 2px solid var(--light-blue-color, #6366f1);
 }
@@ -217,7 +217,7 @@ header nav .nav-sections ul>li a.nav-link-active {
   text-decoration: none;
 }
 
-header nav .nav-sections ul>li:has(a.nav-link-active) {
+header nav .nav-sections .default-content-wrapper>ul>li:has(a.nav-link-active) {
   border-bottom: 2px solid var(--light-blue-color, #6366f1);
 }
 
@@ -247,32 +247,6 @@ header nav .nav-sections ul>li>ul {
 
   header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
   }
 
   header nav .nav-sections ul {
@@ -316,9 +290,48 @@ header nav .nav-sections ul>li>ul {
     border-bottom: 8px solid var(--light-color);
   }
 
-  header nav .nav-sections .default-content-wrapper>ul>li>ul>li {
-    padding: 8px 0;
+  header nav .nav-sections .nav-drop>ul>li {
+    padding: 8px;
   }
+
+  header nav .nav-sections .default-content-wrapper>ul>li>ul>li {
+    padding: 8px;
+  }
+
+  header nav .nav-sections .nav-drop {
+    position: relative;
+    padding-right: 16px;
+    cursor: pointer;
+  }
+
+  header nav .nav-sections .nav-drop>ul>li:hover {
+    cursor: pointer;
+    background-color: rgb(0 0 0 / 9%)
+  }
+
+  header nav .nav-sections .nav-drop::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0.5em;
+    right: 2px;
+    transform: rotate(135deg);
+    width: 6px;
+    height: 6px;
+    border: 2px solid currentcolor;
+    border-radius: 0 1px 0 0;
+    border-width: 2px 2px 0 0;
+  }
+
+  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
+    top: unset;
+    bottom: 0.5em;
+    transform: rotate(315deg);
+  }
+
+
+
+
 }
 
 /* tools */
@@ -399,8 +412,8 @@ header .breadcrumbs ol li[aria-current] {
 }
 
 /* menu-items styles - Modern Mega Nav */
-header nav .menu-item {
-  display: none;
+header nav .menu-item:not(.tabs),
+header nav .tabs-wrapper {
   position: absolute;
   top: 100%;
   left: 0;
@@ -417,6 +430,8 @@ header nav .menu-item {
   animation: menu-slide-in 0.25s ease-out;
 }
 
+
+
 @keyframes menu-slide-in {
   from {
     opacity: 0;
@@ -429,10 +444,14 @@ header nav .menu-item {
   }
 }
 
-header nav .menu-item>div {
+header nav .menu-item>div,
+header nav .tabs-wrapper>.tabs {
   max-width: 1200px;
   padding: 40px 48px;
   margin: auto;
+}
+
+header nav .menu-item>div {
   display: grid;
   grid-template-columns: repeat(3, 1fr) minmax(280px, 320px);
   gap: 48px;

@@ -218,7 +218,7 @@ export default async function decorate(block) {
 
   function hideAllMenuItems() {
     nav.querySelectorAll('.menu-item').forEach((menuItem) => {
-      menuItem.style.display = 'none';
+      menuItem.parentElement.style.display = 'none';
     });
     // Remove active state from nav links
     navSections.querySelectorAll('.nav-link-active').forEach((link) => {
@@ -239,7 +239,7 @@ export default async function decorate(block) {
     // Show the matching menu item
     const menuItem = nav.querySelector(`.menu-item.${className}`);
     if (menuItem) {
-      menuItem.style.display = 'block';
+      menuItem.parentElement.style.display = 'block';
       if (triggerLink) {
         triggerLink.classList.add('nav-link-active');
       }

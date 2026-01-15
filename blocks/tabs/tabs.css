@@ -6,13 +6,13 @@
   overflow-x: auto;
 }
 
-@media (width >= 600px) {
+@media (width >=600px) {
   .tabs .tabs-list {
     font-size: var(--body-font-size-s);
   }
 }
 
-@media (width >= 900px) {
+@media (width >=900px) {
   .tabs .tabs-list {
     font-size: var(--body-font-size-m);
   }
@@ -55,4 +55,207 @@
 
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
+}
+
+/* Navigation Tabs Variation (Vertical Desktop / Accordion Mobile) */
+.nav.tabs {
+  --nav-tab-width: 250px;
+  --nav-tab-bg: #f5f5f5;
+  --nav-tab-bg-active: #fff;
+  --nav-tab-border: #e0e0e0;
+}
+
+@media (width >= 900px) {
+  .nav.tabs {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .nav.tabs .tabs-list {
+    flex-direction: column;
+    width: var(--nav-tab-width);
+    flex-shrink: 0;
+    background-color: var(--nav-tab-bg);
+    border-right: 1px solid var(--nav-tab-border);
+    padding: 1rem 0;
+    margin: 0;
+    gap: 0;
+  }
+
+  .nav.tabs .tabs-list button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-left: 3px solid transparent;
+    background: transparent;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 0;
+  }
+
+  .nav.tabs .tabs-list button:hover {
+    background-color: rgb(0 0 0 / 3%);
+  }
+
+  .nav.tabs .tabs-list button[aria-selected='true'] {
+    background-color: var(--nav-tab-bg-active);
+    color: var(--link-color, inherit);
+    border-left-color: var(--link-color, currentColor);
+    border-bottom: none;
+    font-weight: 700;
+    box-shadow: -1px 0 0 white;
+
+    /* Cover right border */
+  }
+
+  .nav.tabs .tabs-panel {
+    flex-grow: 1;
+    padding: 2rem;
+    border: none;
+    margin: 0;
+  }
+}
+
+/* Mobile Accordion Style (< 900px) */
+@media (width <= 899px) {
+  .nav.tabs {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--nav-tab-border);
+  }
+
+  .nav.tabs .tabs-list {
+    display: contents;
+
+    /* Allows buttons to interleave with panels */
+  }
+
+  .nav.tabs .tabs-list button {
+    width: 100%;
+    text-align: left;
+    padding: 1rem;
+    background: var(--nav-tab-bg);
+    border: none;
+    border-bottom: 1px solid var(--nav-tab-border);
+    border-radius: 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav.tabs .tabs-list button::after {
+    content: '+';
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .nav.tabs .tabs-list button[aria-selected='true'] {
+    background: var(--nav-tab-bg-active);
+    border-bottom: 1px solid var(--nav-tab-border);
+    color: inherit;
+  }
+
+  .nav.tabs .tabs-list button[aria-selected='true']::after {
+    content: '-';
+  }
+
+  .nav.tabs .tabs-panel {
+    border: none;
+    padding: 1rem;
+    margin: 0;
+    border-bottom: 1px solid var(--nav-tab-border);
+    background: #fff;
+  }
+
+  .nav.tabs .tabs-panel[aria-hidden='true'] {
+    display: none;
+  }
+
+  /* Order shuffling for up to 10 tabs to create accordion effect */
+
+  /* Button 1 -> Order 1 */
+  .nav.tabs .tabs-list button:nth-child(1) {
+    order: 1;
+  }
+
+  /* Panel 1 -> Order 2 */
+  .nav.tabs>.tabs-panel:nth-of-type(1) {
+    order: 2;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(2) {
+    order: 3;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(2) {
+    order: 4;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(3) {
+    order: 5;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(3) {
+    order: 6;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(4) {
+    order: 7;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(4) {
+    order: 8;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(5) {
+    order: 9;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(5) {
+    order: 10;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(6) {
+    order: 11;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(6) {
+    order: 12;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(7) {
+    order: 13;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(7) {
+    order: 14;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(8) {
+    order: 15;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(8) {
+    order: 16;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(9) {
+    order: 17;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(9) {
+    order: 18;
+  }
+
+  .nav.tabs .tabs-list button:nth-child(10) {
+    order: 19;
+  }
+
+  .nav.tabs>.tabs-panel:nth-of-type(10) {
+    order: 20;
+  }
 }
