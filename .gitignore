@@ -2,6 +2,10 @@
 coverage/*
 logs/*
 node_modules/*
+.agents/*
+.skills/*
+AGENTS.md
+SKILLS.md
 
 helix-importer-ui
 .DS_Store
