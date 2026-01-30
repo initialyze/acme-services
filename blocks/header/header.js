@@ -183,8 +183,8 @@ export default async function decorate(block) {
   const nav = document.createElement('nav');
   nav.id = 'nav';
   while (fragment.firstElementChild) nav.append(fragment.firstElementChild);
-  const navOffer = nav.querySelector('.nav-offer').cloneNode(true);
-  nav.querySelector('.nav-offer').remove();
+  const navOffer = nav.querySelector('.nav-offer')?.cloneNode(true);
+  nav.querySelector('.nav-offer')?.remove();
 
   const classes = ['brand', 'sections', 'tools'];
   classes.forEach((c, i) => {
@@ -314,7 +314,9 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
-  navWrapper.prepend(navOffer);
+  if (navOffer) {
+    navWrapper.prepend(navOffer);
+  }
   block.append(navWrapper);
 
   if (getMetadata('breadcrumbs').toLowerCase() === 'true') {
