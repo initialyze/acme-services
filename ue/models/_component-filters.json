@@ -4,9 +4,9 @@
     "components": ["section"]
   },
   {
-    "...": "./section.json#/filters"
+    "...": "./_section.json#/filters"
   },
   {
-    "...": "./blocks/*.json#/filters"
+    "...": "./blocks/_*.json#/filters"
   }
 ]

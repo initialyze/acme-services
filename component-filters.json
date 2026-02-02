@@ -9,6 +9,7 @@
     "id": "section",
     "components": [
       "accordion",
+      "button",
       "cards",
       "carousel",
       "columns",
@@ -22,6 +23,7 @@
       "tabs",
       "table",
       "text",
+      "title",
       "video"
     ]
   },
@@ -46,18 +48,40 @@
   {
     "id": "columns",
     "components": [
-      "columns-row"
+      "column"
     ]
   },
   {
-    "id": "columns-row",
-    "components": []
-  },
-  {
-    "id": "columns-cell",
+    "id": "column",
     "components": [
       "text",
-      "image"
+      "image",
+      "button",
+      "title"
+    ]
+  },
+  {
+    "id": "table",
+    "components": [
+      "table-row"
+    ]
+  },
+  {
+    "id": "table-2-columns",
+    "components": [
+      "table-col-2"
+    ]
+  },
+  {
+    "id": "table-3-columns",
+    "components": [
+      "table-col-3"
+    ]
+  },
+  {
+    "id": "table-4-columns",
+    "components": [
+      "table-col-4"
     ]
   },
   {
@@ -65,5 +89,9 @@
     "components": [
       "tabs-item"
     ]
+  },
+  {
+    "id": "video",
+    "components": []
   }
 ]
