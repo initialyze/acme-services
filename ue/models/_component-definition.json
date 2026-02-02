@@ -5,10 +5,16 @@
       "id": "default",
       "components": [
         {
-          "...": "./text.json#/definitions"
+          "...": "./_text.json#/definitions"
         },
         {
-          "...": "./image.json#/definitions"
+          "...": "./_title.json#/definitions"
+        },
+        {
+          "...": "./_image.json#/definitions"
+        },
+        {
+          "...": "./_button.json#/definitions"
         }
       ]
     },
@@ -17,7 +23,7 @@
       "id": "sections",
       "components": [
         {
-          "...": "./section.json#/definitions"
+          "...": "./_section.json#/definitions"
         }
       ]
     },
@@ -26,7 +32,7 @@
       "id": "blocks",
       "components": [
         {
-          "...": "./blocks/*.json#/definitions"
+          "...": "./blocks/_*.json#/definitions"
         }
       ]
     }

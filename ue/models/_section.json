@@ -4,18 +4,27 @@
       "title": "Section",
       "id": "section",
       "plugins": {
-        "da": {
-          "unsafeHTML": "<div></div>"
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section"
+            }
+          }
         }
-      },
-      "filter": "section",
-      "model": "section"
+      }
     }
   ],
   "models": [
     {
       "id": "section",
       "fields": [
+        {
+          "component": "text",
+          "name": "name",
+          "label": "Section Name",
+          "description": "The label shown for this section in the Content Tree"
+        },
         {
           "component": "multiselect",
           "name": "style",
@@ -35,6 +44,7 @@
       "id": "section",
       "components": [
         "accordion",
+        "button",
         "cards",
         "carousel",
         "columns",
@@ -48,6 +58,7 @@
         "tabs",
         "table",
         "text",
+        "title",
         "video"
       ]
     }
