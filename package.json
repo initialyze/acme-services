@@ -4,7 +4,9 @@
   "version": "1.3.0",
   "description": "Starter project for Adobe Helix",
   "scripts": {
-    "dev": "aem up --url=https://main--acme-services-gdrive--initialyze.aem.page/",
+    "dev:da": "aem up --url=https://main--acme-services--initialyze.aem.page/",
+    "dev:gdrive": "aem up --url=https://main--acme-services-gdrive--initialyze.aem.page/",
+    "dev:ue": "aem up --url=https://main--acme-services-ue--initialyze.aem.page/",
     "lint:js": "eslint .",
     "lint:css": "stylelint \"blocks/**/*.css\" \"styles/*.css\"",
     "lint": "npm run lint:js && npm run lint:css",
