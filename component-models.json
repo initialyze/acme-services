@@ -365,6 +365,17 @@
     ]
   },
   {
+    "id": "speaker",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "fragmentPath",
+        "label": "Content Fragment Path",
+        "description": "Path to the Content Fragment containing speaker data"
+      }
+    ]
+  },
+  {
     "id": "table",
     "fields": [
       {
