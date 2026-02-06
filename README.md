@@ -6,6 +6,46 @@ This project is a website built with Edge Delivery Services in Adobe Experience 
 
 This project is based on the [Adobe AEM Boilerplate](https://github.com/adobe/aem-boilerplate/) and set up as a new project. It provides the basic structure, blocks, and configuration needed to run a complete site with `*.aem.live` as the backend.
 
+## Conference / Event Website Solution
+
+This repository contains a reusable, production-ready Conference/Event Website Solution for enterprise customers using Adobe Experience Manager Edge Delivery Services (aem.live). The solution is built on a block-based architecture that prioritizes author-friendliness, performance, and scalability.
+
+### Key Features
+
+- **Block-based Architecture**: Reusable, composable components following AEM best practices
+- **Author-friendly**: Google Docs/SharePoint-style table-based content authoring
+- **Performance-first**: Optimized for fast loading and good LCP scores
+- **SEO-ready**: Semantic HTML and structured content for discoverability
+- **Multi-event Support**: Easily customizable for different events and customers
+- **Multi-language Ready**: Foundation for internationalization
+
+### Solution Architecture
+
+#### Core Pages
+1. **Homepage** - Event branding, key information, and navigation
+2. **Agenda/Schedule** - Event timeline and session details
+3. **Speakers** - Speaker profiles and bios
+4. **Sessions** - Detailed session information and descriptions
+5. **Sponsors** - Sponsor logos and company information
+6. **Registration** - Call-to-action for event registration
+7. **Venue/Location** - Event location details and map
+8. **FAQ** - Frequently asked questions about the event
+9. **Post-event recordings** - Optional section for recorded sessions
+
+#### Core Blocks
+
+##### Mandatory Blocks
+1. **Hero** - Event branding with CTA
+2. **Countdown Timer** - Event date countdown
+3. **Agenda/Schedule** - Event timeline
+4. **Speaker Cards** - Speaker profiles
+5. **Session List** - Session overview
+6. **Sponsor Logos** - Sponsor display
+7. **CTA Banner** - Call-to-action section
+8. **Location/Map** - Venue information
+9. **FAQ** - Frequently asked questions
+10. **Footer** - Site navigation and legal information
+
 ## Key Technologies
 
 - Edge Delivery Services for AEM Sites
