@@ -1,0 +1,73 @@
+.session-list-container {
+  margin: 20px 0;
+}
+
+.session-item {
+  border: 1px solid var(--light-color);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background-color: var(--background-color);
+}
+
+.session-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.session-datetime {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.session-date,
+.session-time {
+  background-color: var(--light-color);
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.session-speaker {
+  font-style: italic;
+  margin-bottom: 10px;
+  color: var(--link-color);
+}
+
+.session-description {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.session-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.session-tag {
+  background-color: var(--light-blue-color);
+  color: var(--background-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+@media (width >= 900px) {
+  .session-list-container {
+    margin: 30px 0;
+  }
+
+  .session-item {
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .session-title {
+    font-size: 1.5rem;
+  }
+}
