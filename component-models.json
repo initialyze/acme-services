@@ -365,13 +365,13 @@
     ]
   },
   {
-    "id": "speaker",
+    "id": "session-list",
     "fields": [
       {
-        "component": "aem-content",
-        "name": "fragmentPath",
-        "label": "Content Fragment Path",
-        "description": "Path to the Content Fragment containing speaker data"
+        "component": "text",
+        "name": "jsonEndpoint",
+        "label": "Session list Json Endpoint",
+        "description": "The JSON endpoint URL for session list data"
       }
     ]
   },
