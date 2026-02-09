@@ -34,6 +34,7 @@ This skill documents the complete implementation of a conference website solutio
 
 ### Model Structure
 The speaker model uses a text field for `fragmentPath` which is the standard AEM pattern for referencing Content Fragments in Universal Editor, allowing content authors to select or enter the path to the Content Fragment that contains the speaker data.
+After making any changes in `ue/models/*` make sure to run `npm run build:json` to update components related json files.
 
 ### Usage Instructions
 1. **Content Fragment Mode**: Add `data-fragment-path="/path/to/your/fragment.json"` attribute to the block
