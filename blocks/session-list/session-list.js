@@ -4,7 +4,7 @@
  */
 export default function decorate(block) {
   // Get the JSON data endpoint from the block's first data attribute
-  const jsonEndpoint = block.dataset.jsonEndpoint || null;
+  const jsonEndpoint = block.dataset.jsonEndpoint || 'https://raw.githubusercontent.com/initialyze/initialyzers-aem-data/refs/heads/main/session-catalog.json';
 
   // Create session list container
   const sessionListContainer = document.createElement('div');
